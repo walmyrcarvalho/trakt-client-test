@@ -1,0 +1,30 @@
+ext.versions = [
+
+//  SDK and Tools
+    compileSdk        : 23,
+    buildTools        : '23.0.2',
+
+    minSdk            : 16,
+    targetSdk         : 23,
+
+    code              : 1,
+    name              : '1.0.0',
+
+//  Libraries
+    supportLib        : '23.2.0',
+
+    okHttp            : '2.7.5',
+    picasso           : '2.5.2',
+    butterknife       : '7.0.1',
+    retrofit          : '2.0.0-beta4',
+
+    gson              : '2.5',
+    rxjava            : '1.1.1',
+    parceler          : '1.0.4',
+
+    junit             : '4.12',
+    mockito           : '2.0.2-beta',
+
+    espresso          : '2.2.1',
+    supportTestRunner : '0.4.1',
+]

@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+apply from: 'versions.gradle'
 
 android {
     compileSdkVersion 23
@@ -6,21 +10,71 @@ android {
 
     defaultConfig {
         applicationId "me.walmyrcarvalho.recrutamentoandroid"
-        minSdkVersion 16
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        versionCode versions.code
+        versionName versions.name
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
+
     buildTypes {
+        debug {
+            debuggable true
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+    }
+
+//    configurations.all {
+//        resolutionStrategy {
+//            force 'com.android.support:support-annotations:23.0.1'
+//        }
+//    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+
+    // Support Libraries
+    compile "com.android.support:support-annotations:$versions.supportLib"
+    compile "com.android.support:appcompat-v7:$versions.supportLib"
+    compile "com.android.support:design:$versions.supportLib"
+    compile "com.android.support:recyclerview-v7:$versions.supportLib"
+    compile "com.android.support:support-v4:$versions.supportLib"
+
+    // Networking
+    compile "com.squareup.picasso:picasso:$versions.picasso"
+    compile "com.jakewharton:butterknife:$versions.butterknife"
+    compile "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    compile "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    compile "com.google.code.gson:gson:$versions.gson"
+
+    // Unit Testing
+    testCompile "junit:junit:$versions.junit"
+    testCompile "org.mockito:mockito-all:$versions.mockito"
+
+    // UI Testing
+//    androidTestCompile "com.android.support:support-annotations:$versions.supportLib"
+//
+//    androidTestCompile "com.android.support.test:runner:$versions.supportTestRunner"
+//    androidTestCompile "com.android.support.test:rules:$versions.supportTestRunner"
+//
+//    androidTestCompile "com.android.support.test.espresso:espresso-core:$versions.espresso"
+//    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+//    androidTestCompile "com.android.support.test.espresso:espresso-intents:$versions.espresso"
 }
