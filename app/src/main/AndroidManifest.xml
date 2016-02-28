@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="me.walmyrcarvalho.recrutamentoandroid">
 
     <application
+        android:fullBackupContent="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ShowActivity">
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".ui.screens.season.SeasonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

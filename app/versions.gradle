@@ -25,6 +25,6 @@ ext.versions = [
     junit             : '4.12',
     mockito           : '2.0.2-beta',
 
-    espresso          : '2.2.1',
     supportTestRunner : '0.4.1',
+    espresso          : '2.2.1',
 ]
