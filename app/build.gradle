@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'me.tatarka.retrolambda'
 
 apply from: 'versions.gradle'
 
+repositories {
+    mavenCentral()
+}
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         applicationId "me.walmyrcarvalho.recrutamentoandroid"
@@ -31,20 +34,9 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
     }
-
-//    configurations.all {
-//        resolutionStrategy {
-//            force 'com.android.support:support-annotations:23.0.1'
-//        }
-//    }
 }
 
 dependencies {
@@ -69,12 +61,17 @@ dependencies {
     testCompile "org.mockito:mockito-all:$versions.mockito"
 
     // UI Testing
-//    androidTestCompile "com.android.support:support-annotations:$versions.supportLib"
-//
-//    androidTestCompile "com.android.support.test:runner:$versions.supportTestRunner"
-//    androidTestCompile "com.android.support.test:rules:$versions.supportTestRunner"
-//
-//    androidTestCompile "com.android.support.test.espresso:espresso-core:$versions.espresso"
-//    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
-//    androidTestCompile "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+    androidTestCompile "com.android.support:support-annotations:$versions.supportLib"
+
+    androidTestCompile "com.android.support.test:runner:$versions.supportTestRunner"
+    androidTestCompile "com.android.support.test:rules:$versions.supportTestRunner"
+
+    androidTestCompile "com.android.support.test.espresso:espresso-core:$versions.espresso"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+    androidTestCompile ("com.android.support.test.espresso:espresso-contrib:$versions.espresso") {
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'support-v4'
+    }
+
 }
