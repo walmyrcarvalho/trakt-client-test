@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/top_bottom">
+
+        <ImageView
+            android:id="@+id/season_poster"
+            android:layout_width="@dimen/image_poster_width"
+            android:layout_height="@dimen/image_poster_height"
+            android:contentDescription="@string/content_description_image"
+            android:layout_gravity="start"
+            android:background="@color/background_poster"
+            android:src="@drawable/poster" />
+
+        <TextView
+            android:id="@+id/season_rate"
+            android:layout_width="@dimen/layout_season_rate"
+            android:layout_height="@dimen/layout_season_rate"
+            android:layout_marginStart="@dimen/left_right"
+            android:layout_marginLeft="@dimen/left_right"
+            android:contentDescription="@string/content_description_text"
+            android:background="@drawable/background_season_rate"
+            android:gravity="center"
+            android:padding="@dimen/left_right"
+            android:text="@string/placeholder_text_season_rate"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_season_rate"
+            android:textStyle="bold"
+            tools:text="8.0" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/season_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
