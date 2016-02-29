@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="me.walmyrcarvalho.recrutamentoandroid">
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:fullBackupContent="true"
@@ -9,10 +12,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="false"
-        android:theme="@style/AppTheme"
+        android:theme="@style/TraktTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".ui.screens.season.SeasonActivity">
+        <activity android:name=".ui.screens.season.SeasonDetailActivity"
+            android:theme="@style/TraktTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
