@@ -48,6 +48,7 @@ dependencies {
     compile "com.android.support:design:$versions.supportLib"
     compile "com.android.support:recyclerview-v7:$versions.supportLib"
     compile "com.android.support:support-v4:$versions.supportLib"
+    compile "com.android.support:percent:$versions.supportLib"
 
     // Networking
     compile "com.squareup.picasso:picasso:$versions.picasso"
@@ -55,6 +56,10 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:$versions.retrofit"
     compile "com.squareup.retrofit2:converter-gson:$versions.retrofit"
     compile "com.google.code.gson:gson:$versions.gson"
+
+    // Utils
+    compile "org.parceler:parceler-api:$versions.parceler"
+    apt "org.parceler:parceler:$versions.parceler"
 
     // Unit Testing
     testCompile "junit:junit:$versions.junit"
