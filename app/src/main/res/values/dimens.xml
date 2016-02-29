@@ -1,5 +1,19 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="left_right">16dp</dimen>
+    <dimen name="top_bottom">16dp</dimen>
+
+    <!-- View Sizes -->
+    <dimen name="image_poster_width">165dp</dimen>
+    <dimen name="image_poster_height">242dp</dimen>
+
+    <dimen name="layout_season_rate">80dp</dimen>
+
+    <!-- Text Sizes (sp) -->
+    <dimen name="text_season_rate">24sp</dimen>
+
+    <dimen name="toolbar_title_expanded">24sp</dimen>
+    <dimen name="toolbar_title_collapsed">18sp</dimen>
+
 </resources>

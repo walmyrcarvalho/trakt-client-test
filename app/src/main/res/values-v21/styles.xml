@@ -1,0 +1,23 @@
+<resources>
+
+    <style name="TraktTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="TraktTheme.TextAppearance.Expanded" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/toolbar_title_expanded</item>
+    </style>
+
+    <style name="TraktTheme.TextAppearance.Collapsed" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/toolbar_title_collapsed</item>
+    </style>
+
+</resources>

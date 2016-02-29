@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Recrutamento Android</string>
+    <!-- App Info-->
+    <string name="app_name">Trakt (Test)</string>
+
+    <string name="app_dialog_title">Importante</string>
+    <string name="app_dialog_description">Esse aplicativo</string>
+
+    <!-- Titles -->
+    <string name="episodes_list">Lista de episódios</string>
+
+    <!-- Placeholders -->
+    <string name="placeholder_text_season_rate">0.0</string>
+
+    <!-- Content description-->
+    <string name="content_description_image">image</string>
+    <string name="content_description_text">text</string>
+
 </resources>
