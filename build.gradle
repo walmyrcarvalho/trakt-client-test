@@ -17,3 +17,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def getAPIKey() {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secret.properties')))
+    return props['API_KEY']
+}

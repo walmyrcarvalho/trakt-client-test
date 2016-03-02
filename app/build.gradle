@@ -5,6 +5,9 @@ apply from: 'versions.gradle'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'http://dl.bintray.com/amulyakhare/maven'
+    }
 }
 
 android {
@@ -21,6 +24,8 @@ android {
         versionName versions.name
 
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+
+        buildConfigField "String", "API_KEY", "\""+getAPIKey()+"\""
     }
 
     buildTypes {
@@ -53,11 +58,16 @@ dependencies {
     // Networking
     compile "com.squareup.picasso:picasso:$versions.picasso"
     compile "com.jakewharton:butterknife:$versions.butterknife"
+    compile "com.squareup.okhttp3:okhttp:$versions.okHttp"
+    compile "com.squareup.okhttp3:logging-interceptor:$versions.okHttpInterceptor"
     compile "com.squareup.retrofit2:retrofit:$versions.retrofit"
     compile "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
     compile "com.google.code.gson:gson:$versions.gson"
 
-    // Utils
+    // Misc
+    compile "me.zhanghai.android.materialprogressbar:library:$versions.materialprogress"
+    compile "com.amulyakhare:com.amulyakhare.textdrawable:$versions.textdrawable"
     compile "org.parceler:parceler-api:$versions.parceler"
     apt "org.parceler:parceler:$versions.parceler"
 
