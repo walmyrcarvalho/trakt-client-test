@@ -1,4 +1,4 @@
-package me.walmyrcarvalho.recrutamentoandroid.data.model.collections;
+package me.walmyrcarvalho.recrutamentoandroid.data.model.collection;
 
 import me.walmyrcarvalho.recrutamentoandroid.data.model.Image;
 

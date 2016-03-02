@@ -3,7 +3,7 @@ package me.walmyrcarvalho.recrutamentoandroid.data.model;
 import org.parceler.Parcel;
 import org.parceler.ParcelConstructor;
 
-import me.walmyrcarvalho.recrutamentoandroid.data.model.collections.Ids;
+import me.walmyrcarvalho.recrutamentoandroid.data.model.collection.Ids;
 
 @Parcel
 public class Episode {

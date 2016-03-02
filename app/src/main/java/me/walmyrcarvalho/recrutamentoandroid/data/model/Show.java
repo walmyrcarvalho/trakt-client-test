@@ -1,7 +1,7 @@
 package me.walmyrcarvalho.recrutamentoandroid.data.model;
 
-import me.walmyrcarvalho.recrutamentoandroid.data.model.collections.Ids;
-import me.walmyrcarvalho.recrutamentoandroid.data.model.collections.Images;
+import me.walmyrcarvalho.recrutamentoandroid.data.model.collection.Ids;
+import me.walmyrcarvalho.recrutamentoandroid.data.model.collection.Images;
 
 public class Show {
     public String title;
