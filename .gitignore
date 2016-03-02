@@ -17,6 +17,9 @@ out/
 build/
 .gradle/
 
+# .properties files
+secret.properties
+
 # Project files
 *.iml
 .idea/
