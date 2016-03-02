@@ -5,13 +5,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * AppUtil - Class with small common helper methods.
+ * NetworkUtil - Class with small common helper methods.
  * @author Walmyr Carvalho
  */
 
-public class AppUtil {
+public class NetworkUtil {
 
-    public static boolean isConnected(Context context) {
+    public static boolean isNetworkConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
