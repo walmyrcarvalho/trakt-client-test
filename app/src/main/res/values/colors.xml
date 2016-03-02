@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#393939</color>
     <color name="colorAccent">#E16B1D</color>
 
-    <color name="background_layout">#d6d6d6</color>
+    <color name="background_layout">#e7e7e7</color>
     <color name="background_poster">#979797</color>
     <color name="background_rate">#E16B1D</color>
+
+    <color name="text_list_item">#3E3E3E</color>
 
     <color name="white">#FFFFFF</color>
 
