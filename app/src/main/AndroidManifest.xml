@@ -15,7 +15,7 @@
         android:theme="@style/TraktTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".ui.screens.season.SeasonDetailActivity"
+        <activity android:name=".ui.screen.seasondetail.SeasonDetailActivity"
             android:theme="@style/TraktTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

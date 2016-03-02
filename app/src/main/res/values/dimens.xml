@@ -7,11 +7,13 @@
     <!-- View Sizes -->
     <dimen name="image_poster_width">165dp</dimen>
     <dimen name="image_poster_height">242dp</dimen>
+    <dimen name="image_list_item">50dp</dimen>
 
     <dimen name="layout_season_rate">80dp</dimen>
 
     <!-- Text Sizes (sp) -->
     <dimen name="text_season_rate">24sp</dimen>
+    <dimen name="text_list_item">20sp</dimen>
 
     <dimen name="toolbar_title_expanded">24sp</dimen>
     <dimen name="toolbar_title_collapsed">18sp</dimen>
