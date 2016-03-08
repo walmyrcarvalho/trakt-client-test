@@ -3,12 +3,48 @@
     <style name="TraktTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="TraktTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TraktTheme.TextAppearance.ExpandedTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="TraktTheme.TextAppearance.CollapsedTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_toolbar_title_collapsed</item>
+    </style>
+
+    <style name="TraktTheme.EpisodeNumber" parent="TextAppearance.AppCompat">
+        <item name="android:background">@drawable/background_episode_number</item>
+        <item name="android:layout_marginRight">@dimen/space_left_right</item>
+        <item name="android:layout_height">@dimen/layout_episode_number</item>
+        <item name="android:layout_width">@dimen/layout_episode_number</item>
+        <item name="android:textSize">@dimen/text_episode_number</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TraktTheme.EpisodeTitle" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/text_episode_title</item>
+        <item name="android:textColor">@color/text_episode_title</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TraktTheme.ProgressBar" parent="Widget.MaterialProgressBar.ProgressBar">
+        <item name="android:tint">@color/text_episodes_header</item>
+        <item name="android:layout_height">@dimen/view_progress_size</item>
+        <item name="android:layout_width">@dimen/view_progress_size</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:visibility">gone</item>
     </style>
 
 </resources>

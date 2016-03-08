@@ -1,6 +1,6 @@
 <resources>
     <!-- App Info-->
-    <string name="app_name">Trakt (Test)</string>
+    <string name="app_name">Trakt </string>
 
     <string name="app_dialog_title">Importante</string>
     <string name="app_dialog_description">Esse aplicativo</string>
@@ -14,5 +14,8 @@
     <!-- Content description-->
     <string name="content_description_image">image</string>
     <string name="content_description_text">text</string>
+    <string name="episodes">Episodes</string>
+    <string name="ok">OK</string>
+    <string name="network_error">You may be offline. Please, check your connection and try again.</string>
 
 </resources>
