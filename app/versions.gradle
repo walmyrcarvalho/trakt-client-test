@@ -21,8 +21,6 @@ ext.versions = [
     gson              : '2.5',
 
     materialprogress  : '1.1.5',
-    textdrawable      : '1.0.1',
-    parceler          : '1.0.4',
 
     junit             : '4.12',
     mockito           : '2.0.2-beta',
