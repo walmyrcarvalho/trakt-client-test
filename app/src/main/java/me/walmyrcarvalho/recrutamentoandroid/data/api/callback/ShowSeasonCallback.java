@@ -2,7 +2,7 @@ package me.walmyrcarvalho.recrutamentoandroid.data.api.callback;
 
 import java.util.List;
 
-import me.walmyrcarvalho.recrutamentoandroid.data.model.Episode;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
 
 public interface ShowSeasonCallback {
 

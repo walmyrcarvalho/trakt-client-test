@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 
-import me.walmyrcarvalho.recrutamentoandroid.util.Constants;
+import me.walmyrcarvalho.recrutamentoandroid.misc.util.Constants;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -36,20 +36,28 @@ public class TraktAPI {
 
     public OkHttpClient getOkHttpClient() {
         return new OkHttpClient.Builder()
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        Request request = chain.request().newBuilder()
-                                .header(Constants.HEADER_CONTENT_TYPE, Constants.VALUE_CONTENT_TYPE)
-                                .header(Constants.HEADER_API_KEY, Constants.VALUE_API_KEY)
-                                .header(Constants.HEADER_API_VERSION, Constants.VALUE_API_VERSION)
-                                .build();
-                        return chain.proceed(request);
-                    }
-                }).build();
+                .addInterceptor(headerInterceptor) // Custom headers
+                .build();
     }
 
     public TraktService getService() {
         return service;
     }
+
+    public static Interceptor headerInterceptor = new Interceptor() {
+
+        @Override
+        public Response intercept(Chain chain) throws IOException {
+            Request request = chain.request().newBuilder()
+                    .header(Constants.HEADER_CONTENT_TYPE, Constants.VALUE_CONTENT_TYPE)
+                    .header(Constants.HEADER_API_KEY, Constants.VALUE_API_KEY)
+                    .header(Constants.HEADER_API_VERSION, Constants.VALUE_API_VERSION)
+                    .build();
+
+            return chain
+                    .proceed(request)
+                    .newBuilder()
+                    .build();
+        }
+    };
 }

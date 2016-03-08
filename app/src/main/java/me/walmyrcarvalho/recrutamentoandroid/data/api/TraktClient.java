@@ -4,52 +4,66 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import me.walmyrcarvalho.recrutamentoandroid.data.api.callback.ShowInfoCallback;
+import me.walmyrcarvalho.recrutamentoandroid.data.api.callback.ShowDetailCallback;
 import me.walmyrcarvalho.recrutamentoandroid.data.api.callback.ShowSeasonCallback;
-import me.walmyrcarvalho.recrutamentoandroid.data.model.Episode;
-import me.walmyrcarvalho.recrutamentoandroid.data.model.Show;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Show;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TraktClient {
 
-    public void loadShowSeason(String showName, String season, @NonNull final ShowSeasonCallback callback) {
-        TraktAPI.getInstance().getShowSeason(showName, season).enqueue(new Callback<List<Episode>>() {
-            @Override
-            public void onResponse(Call<List<Episode>> call, Response<List<Episode>> response) {
-                List<Episode> episodes = response.body();
-                if (episodes != null) {
-                    callback.onShowSeasonLoaded(episodes);
-                } else {
-                    callback.onShowSeasonNotLoaded("There's no season available.");
-                }
-            }
+    public void loadShowSeason(String showName, int season, @NonNull final ShowSeasonCallback callback) {
 
-            @Override
-            public void onFailure(Call<List<Episode>> call, Throwable t) {
-                callback.onShowSeasonNotLoaded("There's no season available.");
-            }
-        });
+        TraktAPI.getInstance()
+                .getShowSeason(showName, season)
+                .enqueue(new Callback<List<Episode>>() {
+
+                    @Override
+                    public void onResponse(Call<List<Episode>> call, Response<List<Episode>> response) {
+                        List<Episode> episodes = response.body();
+                        if (episodes != null) {
+                            callback.onShowSeasonLoaded(episodes);
+                        } else {
+                            callback.onShowSeasonNotLoaded("Não foi possível encontrar a temporada.");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Episode>> call, Throwable t) {
+                        callback.onShowSeasonNotLoaded("Não foi possível encontrar a temporada.");
+                    }
+                });
     }
 
-    public void loadShowInfo(String showName, @NonNull final ShowInfoCallback callback) {
-        TraktAPI.getInstance().getShowInfo(showName).enqueue(new Callback<Show>() {
-            @Override
-            public void onResponse(Call<Show> call, Response<Show> response) {
-                Show show = response.body();
-                if (show != null) {
-                    callback.onShowInfoLoaded(show);
-                } else {
-                    callback.onShowInfoNotLoaded("There's no show available.");
-                }
-            }
+    public void loadShowDetail(String showName, @NonNull final ShowDetailCallback callback) {
 
-            @Override
-            public void onFailure(Call<Show> call, Throwable t) {
-                callback.onShowInfoNotLoaded("There's no show available.");
-            }
-        });
+        TraktAPI.getInstance()
+                .getShowDetail(showName)
+                .enqueue(new Callback<Show>() {
+
+                    @Override
+                    public void onResponse(Call<Show> call, Response<Show> response) {
+                        Show show = response.body();
+                        if (show != null) {
+
+                            // This fake rate is only because the v2 version of Trakt API does not
+                            // provide rate on this format anymore. But in a regular scenario
+                            // it would be loaded on this response.
+                            show.rate = "8.5";
+
+                            callback.onShowDetailLoaded(show);
+                        } else {
+                            callback.onShowDetailNotLoaded("Não foi possível encontrar a série.");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Show> call, Throwable t) {
+                        callback.onShowDetailNotLoaded("Não foi possível encontrar a série.");
+                    }
+                });
 
     }
 }
