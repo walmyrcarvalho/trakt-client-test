@@ -1,17 +1,17 @@
-package me.walmyrcarvalho.recrutamentoandroid.ui.screen.seasondetail;
+package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 
 import java.util.List;
 
 import me.walmyrcarvalho.recrutamentoandroid.data.api.TraktClient;
-import me.walmyrcarvalho.recrutamentoandroid.data.api.callback.ShowInfoCallback;
+import me.walmyrcarvalho.recrutamentoandroid.data.api.callback.ShowDetailCallback;
 import me.walmyrcarvalho.recrutamentoandroid.data.api.callback.ShowSeasonCallback;
-import me.walmyrcarvalho.recrutamentoandroid.data.model.Episode;
-import me.walmyrcarvalho.recrutamentoandroid.data.model.Show;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Show;
 
-import static me.walmyrcarvalho.recrutamentoandroid.util.Preconditions.checkNotNull;
+import static me.walmyrcarvalho.recrutamentoandroid.misc.util.Preconditions.checkNotNull;
 
 public class SeasonDetailPresenter implements
-        SeasonDetailContract.Actions, ShowSeasonCallback, ShowInfoCallback {
+        SeasonDetailContract.Presenter, ShowSeasonCallback, ShowDetailCallback {
 
     private SeasonDetailContract.View view;
     private TraktClient client;
@@ -22,7 +22,7 @@ public class SeasonDetailPresenter implements
     }
 
     @Override
-    public void loadShowSeason(String showName, String season) {
+    public void loadShowSeason(String showName, int season) {
         if (view != null) {
             view.showProgress();
         }
@@ -30,12 +30,17 @@ public class SeasonDetailPresenter implements
     }
 
     @Override
-    public void loadShowInfo(String showName) {
-        client.loadShowInfo(showName, this);
+    public void loadShowDetail(String showName) {
+        client.loadShowDetail(showName, this);
     }
 
     @Override
-    public void onDestroyView() {
+    public void attachView(SeasonDetailContract.View view) {
+        this.view = view;
+    }
+
+    @Override
+    public void dettachView() {
         view = null;
     }
 
@@ -56,14 +61,24 @@ public class SeasonDetailPresenter implements
     }
 
     @Override
-    public void onShowInfoLoaded(Show show) {
+    public void onShowDetailLoaded(Show show) {
         if (view != null) {
-            view.loadShowInfo(show);
+            if (show.images.poster.full != null) {
+                view.loadShowPoster(show.images.poster.full);
+            }
+
+            if (show.images.banner.full != null) {
+                view.loadShowHeader(show.images.banner.full);
+            }
+
+            if (show.rate != null) {
+                view.loadShowRate(show.rate);
+            }
         }
     }
 
     @Override
-    public void onShowInfoNotLoaded(String errorMessage) {
+    public void onShowDetailNotLoaded(String errorMessage) {
         if (view != null) {
             view.showError(errorMessage);
         }

@@ -1,4 +1,4 @@
-package me.walmyrcarvalho.recrutamentoandroid.ui.adapter;
+package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 
 import me.walmyrcarvalho.recrutamentoandroid.R;
-import me.walmyrcarvalho.recrutamentoandroid.data.model.Episode;
-import me.walmyrcarvalho.recrutamentoandroid.ui.viewholder.SeasonDetailViewHolder;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
 
-import static me.walmyrcarvalho.recrutamentoandroid.util.Preconditions.checkNotNull;
+import static me.walmyrcarvalho.recrutamentoandroid.misc.util.Preconditions.checkNotNull;
 
-public class SeasonDetailListAdapter extends RecyclerView.Adapter<SeasonDetailViewHolder> {
+public class SeasonDetailListAdapter extends RecyclerView.Adapter<SeasonDetailListViewHolder> {
 
     private List<Episode> episodes;
 
@@ -23,26 +23,27 @@ public class SeasonDetailListAdapter extends RecyclerView.Adapter<SeasonDetailVi
     }
 
     @Override
-    public SeasonDetailViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SeasonDetailListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_list_item, parent, false);
+                .inflate(R.layout.layout_episode_list_item, parent, false);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Episode clicked!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "Episode clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
-        return new SeasonDetailViewHolder(view);
+        return new SeasonDetailListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(SeasonDetailViewHolder holder, int position) {
+    public void onBindViewHolder(SeasonDetailListViewHolder holder, int position) {
         Episode episode = episodes.get(position);
 
-        holder.listTitle.setText(episode.title);
+        holder.episodeTitle.setText(episode.title);
+        holder.episodeNumber.setText(String.format(Locale.US, "E%d", episode.number));
     }
 
     @Override
@@ -56,6 +57,5 @@ public class SeasonDetailListAdapter extends RecyclerView.Adapter<SeasonDetailVi
 
     public void updateList(List<Episode> episodes) {
         setEpisodes(episodes);
-        notifyDataSetChanged();
     }
 }

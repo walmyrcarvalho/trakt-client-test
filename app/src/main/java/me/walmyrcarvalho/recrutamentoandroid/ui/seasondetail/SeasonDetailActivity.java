@@ -1,4 +1,4 @@
-package me.walmyrcarvalho.recrutamentoandroid.ui.screen.seasondetail;
+package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
