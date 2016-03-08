@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="?android:selectableItemBackground"
+    android:padding="@dimen/space_left_right">
+
+    <TextView
+        android:id="@+id/episode_number"
+        style="@style/TraktTheme.EpisodeNumber"
+        tools:ignore="RtlHardcoded"
+        tools:text="E1"/>
+
+    <TextView
+        android:id="@+id/episode_title"
+        style="@style/TraktTheme.EpisodeTitle"
+        tools:text="Episode " />
+</LinearLayout>
