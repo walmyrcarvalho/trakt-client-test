@@ -1,4 +1,4 @@
-package me.walmyrcarvalho.recrutamentoandroid.util;
+package me.walmyrcarvalho.recrutamentoandroid.misc.util;
 
 /*
  * Copyright (C) 2007 The Guava Authors

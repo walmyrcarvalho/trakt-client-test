@@ -1,4 +1,4 @@
-package me.walmyrcarvalho.recrutamentoandroid.util;
+package me.walmyrcarvalho.recrutamentoandroid.misc.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
