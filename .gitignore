@@ -17,9 +17,6 @@ out/
 build/
 .gradle/
 
-# .properties files
-secret.properties
-
 # Project files
 *.iml
 .idea/
@@ -30,6 +27,7 @@ obj/
 # Local configuration file (sdk path, etc)
 local.properties
 keystore.properties
+secret.properties
 
 # Windows thumbnail db
 .DS_Store
@@ -39,7 +37,6 @@ keystore.properties
 hs_err*
 
 # Logs
-hs_err*
 *.log
 
 # Merge stuff
