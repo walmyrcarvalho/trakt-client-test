@@ -48,7 +48,7 @@ public class SeasonDetailPresenter implements
     public void onShowSeasonLoaded(List<Episode> episodes) {
         if (view != null) {
             view.hideProgress();
-            view.loadShowSeason(episodes);
+            view.showSeasonEpisodes(episodes);
         }
     }
 
@@ -64,15 +64,15 @@ public class SeasonDetailPresenter implements
     public void onShowDetailLoaded(Show show) {
         if (view != null) {
             if (show.images.poster.full != null) {
-                view.loadShowPoster(show.images.poster.full);
+                view.showPosterImage(show.images.poster.full);
             }
 
             if (show.images.banner.full != null) {
-                view.loadShowHeader(show.images.banner.full);
+                view.showHeaderImage(show.images.banner.full);
             }
 
             if (show.rate != null) {
-                view.loadShowRate(show.rate);
+                view.showRate(show.rate);
             }
         }
     }
