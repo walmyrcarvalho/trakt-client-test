@@ -8,8 +8,9 @@ Projeto teste para processo seletivo da Movile.
 
 O aplicativo consiste em um cliente simples do [Trakt.tv](http://trakt.tv) que trás informações de uma série, como a lista de episódios de uma temporada e outros detalhes, como imagens e rating.
 
+Demonstração (Vídeo): [Link](https://www.youtube.com/watch?v=eCCA1L3BlWo)
 
-## Características
+## Detalhes do projeto
 
 #### API
 Trakt.tv (Docs): [http://docs.trakt.apiary.io/](http://docs.trakt.apiary.io/)
@@ -37,9 +38,11 @@ Trakt.tv (Docs): [http://docs.trakt.apiary.io/](http://docs.trakt.apiary.io/)
 
 ## Como gerar uma build?
 
-Para fazer build do projeto é necessário criar um arquivo de nome `secret.properties` na raiz do projeto, contendo um Client ID válido do Trakt.tv no seguinte formato:
+Para fazer build do projeto é necessário criar um arquivo de nome `secret.properties` na raiz do projeto, contendo um Client ID válido do Trakt.tv no seguinte ormato:
 
-	API_KEY=your_client_id
+```
+API_KEY=your_client_id
+```
 
 Para conseguir o Client ID basta acessar [esse link](https://trakt.tv/oauth/applications/new) e criar uma nova aplicação no Trakt.tv.
 
