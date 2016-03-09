@@ -7,19 +7,21 @@ import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
 public interface SeasonDetailContract {
 
     interface View {
-        void loadShowSeason(List<Episode> episodes);
+        void showSeasonEpisodes(List<Episode> episodes);
 
-        void loadShowHeader(String headerUrl);
+        void showHeaderImage(String headerUrl);
 
-        void loadShowPoster(String posterUrl);
+        void showPosterImage(String posterUrl);
 
-        void loadShowRate(String showRating);
+        void showRate(String showRating);
+
+        void showError(String error);
+
+        void showAboutDialog();
 
         void showProgress();
 
         void hideProgress();
-
-        void showError(String error);
     }
 
     interface Presenter {
