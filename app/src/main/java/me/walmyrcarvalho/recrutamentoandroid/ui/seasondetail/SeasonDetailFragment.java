@@ -191,11 +191,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
 
     @Override
     public void showError(String error) {
-        Snackbar.make(view, error, Snackbar.LENGTH_SHORT)
-                .setAction(R.string.ok, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) { /* Dismiss */ }
-                }).show();
+        Snackbar.make(view, error, Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
@@ -203,7 +199,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
         AlertDialog dialog = new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.app_dialog_title)
                 .setMessage(R.string.app_dialog_description)
-                .setPositiveButton(R.string.ok, null)
+                .setNeutralButton(R.string.close, null)
                 .create();
 
         dialog.show();

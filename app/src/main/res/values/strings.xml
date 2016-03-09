@@ -21,8 +21,8 @@
     <string name="app_dialog_title">About this project</string>
     <string name="app_dialog_description">This is a test application made by Walmyr Carvalho for Movile selection process. Please do not try to monetize or publish it on Play Store.\n\nThanks!</string>
 
-    <string name="ok">OK</string>
     <string name="refresh">Refresh</string>
     <string name="about">About</string>
+    <string name="close">Close</string>
 
 </resources>
