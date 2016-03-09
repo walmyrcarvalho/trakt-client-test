@@ -1,15 +1,21 @@
 package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -67,13 +73,36 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
         ButterKnife.bind(this, view);
 
         setRetainInstance(true);
+        setHasOptionsMenu(true);
 
         setupToolbar();
+        setupPresenter();
         setupRecyclerView(container.getContext(), episodesList);
 
-        setupPresenter(getActivity());
+        loadData(getActivity());
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_season_detail, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.menu_refresh:
+                loadData(getActivity());
+                return true;
+
+            case R.id.menu_about:
+                showAboutDialog();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -95,9 +124,26 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
         ButterKnife.unbind(this);
     }
 
-    private void setupPresenter(Context context) {
-        presenter = new SeasonDetailPresenter(new TraktClient(), this);
+    private void setupToolbar() {
+        toolbar.setTitle("Season 1");
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+    }
 
+    private void setupPresenter() {
+        presenter = new SeasonDetailPresenter(new TraktClient(), this);
+    }
+
+    private void setupRecyclerView(Context context, RecyclerView list) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(list.getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.setAutoMeasureEnabled(true);
+
+        list.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
+        list.setLayoutManager(layoutManager);
+        list.setNestedScrollingEnabled(false);
+    }
+
+    private void loadData(Context context) {
         if (NetworkUtil.isNetworkConnected(context)) {
             presenter.loadShowSeason(Constants.SHOW_NAME, Constants.SHOW_SEASON);
             presenter.loadShowDetail(Constants.SHOW_NAME);
@@ -106,36 +152,22 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
         }
     }
 
-    private void setupRecyclerView(Context context, RecyclerView list) {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(list.getContext());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
-        list.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
-        list.setLayoutManager(layoutManager);
-        list.setNestedScrollingEnabled(false);
-    }
-
-    private void setupToolbar() {
-        toolbar.setTitle("Season 1");
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-    }
-
     @Override
-    public void loadShowSeason(List<Episode> episodes) {
+    public void showSeasonEpisodes(List<Episode> episodes) {
         SeasonDetailListAdapter adapter = new SeasonDetailListAdapter(episodes);
         adapter.updateList(episodes);
         episodesList.setAdapter(adapter);
     }
 
     @Override
-    public void loadShowHeader(String headerUrl) {
+    public void showHeaderImage(String headerUrl) {
         Picasso.with(getActivity())
                 .load(headerUrl)
                 .into(headerImage);
     }
 
     @Override
-    public void loadShowPoster(String posterUrl) {
+    public void showPosterImage(String posterUrl) {
         Picasso.with(getActivity())
                 .load(posterUrl)
                 .placeholder(R.drawable.poster_placeholder)
@@ -143,7 +175,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
     }
 
     @Override
-    public void loadShowRate(String showRating) {
+    public void showRate(String showRating) {
         seasonRate.setText(showRating);
     }
 
@@ -164,5 +196,16 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
                     @Override
                     public void onClick(View v) { /* Dismiss */ }
                 }).show();
+    }
+
+    @Override
+    public void showAboutDialog() {
+        AlertDialog dialog = new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.app_dialog_title)
+                .setMessage(R.string.app_dialog_description)
+                .setPositiveButton(R.string.ok, null)
+                .create();
+
+        dialog.show();
     }
 }
