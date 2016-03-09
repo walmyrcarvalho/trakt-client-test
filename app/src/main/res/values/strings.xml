@@ -3,7 +3,7 @@
     <string name="app_name">Trakt </string>
 
     <!-- Placeholders -->
-    <string name="placeholder_text_season_rate">0.0</string>
+    <string name="placeholder_text_season_rating">--</string>
 
     <!-- Content descriptions -->
     <string name="content_description_image">Image</string>
@@ -12,7 +12,7 @@
 
     <string name="content_description_text">text</string>
     <string name="content_description_episodes">Episodes</string>
-    <string name="content_description_rate">Rate</string>
+    <string name="content_description_rating">Rate</string>
 
     <!-- General -->
     <string name="episodes_list">Episodes</string>

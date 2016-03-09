@@ -16,12 +16,12 @@
     <dimen name="image_header_height">170dp</dimen>
 
     <dimen name="layout_episode_number">50dp</dimen>
-    <dimen name="layout_season_rate">60dp</dimen>
+    <dimen name="layout_season_rating">60dp</dimen>
 
     <dimen name="view_progress_size">24dp</dimen>
 
     <!-- Text Sizes (sp) -->
-    <dimen name="text_season_rate">24sp</dimen>
+    <dimen name="text_season_rating">24sp</dimen>
     <dimen name="text_episodes_header">24sp</dimen>
     <dimen name="text_episode_number">18sp</dimen>
     <dimen name="text_episode_title">20sp</dimen>

@@ -20,7 +20,7 @@
         android:id="@+id/season_poster"
         android:layout_width="@dimen/image_poster_width"
         android:layout_height="@dimen/image_poster_height"
-        android:layout_alignBottom="@+id/season_rate"
+        android:layout_alignBottom="@+id/season_rating"
         android:layout_gravity="start"
         android:layout_marginLeft="@dimen/space_left_right"
         android:layout_marginRight="@dimen/space_left_right"
@@ -29,8 +29,8 @@
         tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:id="@+id/season_rate"
-        style="@style/TraktTheme.SeasonRate"
+        android:id="@+id/season_rating"
+        style="@style/TraktTheme.SeasonRating"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/season_header"

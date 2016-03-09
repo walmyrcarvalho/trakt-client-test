@@ -48,15 +48,15 @@
         <item name="mpb_progressStyle">circular</item>
     </style>
 
-    <style name="TraktTheme.SeasonRate" parent="TextAppearance.AppCompat">
-        <item name="android:layout_height">@dimen/layout_season_rate</item>
-        <item name="android:layout_width">@dimen/layout_season_rate</item>
-        <item name="android:background">@drawable/background_season_rate</item>
-        <item name="android:contentDescription">@string/content_description_rate</item>
+    <style name="TraktTheme.SeasonRating" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">@dimen/layout_season_rating</item>
+        <item name="android:layout_width">@dimen/layout_season_rating</item>
+        <item name="android:background">@drawable/background_season_rating</item>
+        <item name="android:contentDescription">@string/content_description_rating</item>
         <item name="android:gravity">center</item>
-        <item name="android:text">@string/placeholder_text_season_rate</item>
+        <item name="android:text">@string/placeholder_text_season_rating</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/text_season_rate</item>
+        <item name="android:textSize">@dimen/text_season_rating</item>
         <item name="android:textStyle">bold</item>
     </style>
 

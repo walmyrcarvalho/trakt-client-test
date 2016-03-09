@@ -39,8 +39,8 @@
             tools:ignore="RtlHardcoded" />
 
         <TextView
-            android:id="@+id/season_rate"
-            style="@style/TraktTheme.SeasonRate"
+            android:id="@+id/season_rating"
+            style="@style/TraktTheme.SeasonRating"
             android:layout_toEndOf="@+id/season_poster"
             android:layout_toRightOf="@+id/season_poster"
             tools:text="8.0" />
@@ -48,8 +48,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/season_rate"
-            android:layout_alignRight="@+id/season_rate"
+            android:layout_alignEnd="@+id/season_rating"
+            android:layout_alignRight="@+id/season_rating"
             android:layout_below="@+id/season_poster"
             android:layout_marginTop="@dimen/space_left_right"
             android:orientation="horizontal">

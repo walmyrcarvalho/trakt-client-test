@@ -3,6 +3,7 @@ package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 import java.util.List;
 
 import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
+import me.walmyrcarvalho.recrutamentoandroid.data.entity.Rating;
 
 public interface SeasonDetailContract {
 
@@ -13,7 +14,7 @@ public interface SeasonDetailContract {
 
         void showPosterImage(String posterUrl);
 
-        void showRate(String showRating);
+        void showRating(String showRating);
 
         void showError(String error);
 
@@ -28,6 +29,8 @@ public interface SeasonDetailContract {
         void loadShowSeason(String showName, int season);
 
         void loadShowDetail(String showName);
+
+        void loadShowRating(String showName);
 
         void attachView(View view);
 

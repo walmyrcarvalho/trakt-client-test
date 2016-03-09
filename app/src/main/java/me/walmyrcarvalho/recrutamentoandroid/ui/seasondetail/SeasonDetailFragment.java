@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -53,8 +51,8 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
     @Bind(R.id.season_header)
     ImageView headerImage;
 
-    @Bind(R.id.season_rate)
-    TextView seasonRate;
+    @Bind(R.id.season_rating)
+    TextView seasonRating;
 
     private View view;
     private Presenter presenter;
@@ -147,6 +145,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
         if (NetworkUtil.isNetworkConnected(context)) {
             presenter.loadShowSeason(Constants.SHOW_NAME, Constants.SHOW_SEASON);
             presenter.loadShowDetail(Constants.SHOW_NAME);
+            presenter.loadShowRating(Constants.SHOW_NAME);
         } else {
             showError(context.getString(R.string.network_error));
         }
@@ -175,8 +174,8 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
     }
 
     @Override
-    public void showRate(String showRating) {
-        seasonRate.setText(showRating);
+    public void showRating(String showRating) {
+        seasonRating.setText(showRating);
     }
 
     @Override
