@@ -26,13 +26,13 @@ public class TraktClient {
                         if (episodes != null) {
                             callback.onShowSeasonLoaded(episodes);
                         } else {
-                            callback.onShowSeasonNotLoaded("Não foi possível encontrar a temporada.");
+                            callback.onShowSeasonNotLoaded("Unable to find the season. :(");
                         }
                     }
 
                     @Override
                     public void onFailure(Call<List<Episode>> call, Throwable t) {
-                        callback.onShowSeasonNotLoaded("Não foi possível encontrar a temporada.");
+                        callback.onShowSeasonNotLoaded("Unable to find the season. :(");
                     }
                 });
     }
@@ -55,13 +55,13 @@ public class TraktClient {
 
                             callback.onShowDetailLoaded(show);
                         } else {
-                            callback.onShowDetailNotLoaded("Não foi possível encontrar a série.");
+                            callback.onShowDetailNotLoaded("Unable to find the show. :(");
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Show> call, Throwable t) {
-                        callback.onShowDetailNotLoaded("Não foi possível encontrar a série.");
+                        callback.onShowDetailNotLoaded("Unable to find the show. :(");
                     }
                 });
 
