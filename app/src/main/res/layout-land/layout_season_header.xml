@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_layout"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/season_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/layout_season_description"
+        android:layout_toEndOf="@+id/layout_season_description"
+        android:layout_toRightOf="@+id/layout_season_description"
+        android:background="@color/colorPrimaryDark"
+        android:contentDescription="@string/content_description_image"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/layout_season_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_left_right"
+        android:paddingLeft="@dimen/space_left_right"
+        android:paddingRight="@dimen/space_left_right"
+        android:paddingTop="@dimen/space_top_bottom_plus_statusbar"
+        tools:ignore="RtlHardcoded">
+
+        <ImageView
+            android:id="@+id/season_poster"
+            android:layout_width="@dimen/image_poster_width"
+            android:layout_height="@dimen/image_poster_height"
+            android:layout_marginRight="@dimen/space_left_right"
+            android:contentDescription="@string/content_description_image"
+            android:src="@drawable/poster_placeholder"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/season_rate"
+            style="@style/TraktTheme.SeasonRate"
+            android:layout_toEndOf="@+id/season_poster"
+            android:layout_toRightOf="@+id/season_poster"
+            tools:text="8.0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/season_rate"
+            android:layout_alignRight="@+id/season_rate"
+            android:layout_below="@+id/season_poster"
+            android:layout_marginTop="@dimen/space_left_right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/episodes_list"
+                android:textColor="@color/text_episodes_header"
+                android:textSize="@dimen/text_episodes_header" />
+
+            <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/TraktTheme.ProgressBar"
+                app:mpb_progressStyle="circular" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
