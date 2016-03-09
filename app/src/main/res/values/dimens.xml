@@ -3,21 +3,22 @@
     <!-- Margins -->
     <dimen name="space_left_right">16dp</dimen>
     <dimen name="space_top_bottom">16dp</dimen>
+    <dimen name="space_top_bottom_plus_statusbar">40dp</dimen>
     <dimen name="space_poster_margin_top">100dp</dimen>
     <dimen name="space_poster_margin_bottom">24dp</dimen>
 
     <!-- View Sizes -->
     <dimen name="image_poster_width">120dp</dimen>
     <dimen name="image_poster_height">176dp</dimen>
-    <dimen name="image_header_height">180dp</dimen>
+    <dimen name="image_poster_width_landscape">96dp</dimen>
+    <dimen name="image_poster_height_landscape">141dp</dimen>
+
+    <dimen name="image_header_height">170dp</dimen>
 
     <dimen name="layout_episode_number">50dp</dimen>
     <dimen name="layout_season_rate">60dp</dimen>
 
-
     <dimen name="view_progress_size">24dp</dimen>
-
-
 
     <!-- Text Sizes (sp) -->
     <dimen name="text_season_rate">24sp</dimen>
