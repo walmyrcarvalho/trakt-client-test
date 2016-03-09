@@ -1,6 +1,6 @@
 ## Recrutamento Android - Movile
 
-![Hero image](art/hero.jpg =600x)
+![Hero image](art/hero.jpg)
 
 ---
 
