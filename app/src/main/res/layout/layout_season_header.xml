@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_layout"
     android:fitsSystemWindows="true">
 
@@ -11,8 +11,8 @@
         android:id="@+id/season_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_header_height"
-        android:contentDescription="@string/content_description_image"
         android:background="@color/colorPrimaryDark"
+        android:contentDescription="@string/content_description_image"
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop" />
 
@@ -30,21 +30,13 @@
 
     <TextView
         android:id="@+id/season_rate"
-        android:layout_width="@dimen/layout_season_rate"
-        android:layout_height="@dimen/layout_season_rate"
+        style="@style/TraktTheme.SeasonRate"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/season_header"
         android:layout_marginLeft="@dimen/space_left_right"
         android:layout_marginRight="@dimen/space_left_right"
         android:layout_marginTop="@dimen/space_left_right"
-        android:background="@drawable/background_season_rate"
-        android:contentDescription="@string/content_description_text"
-        android:gravity="center"
-        android:text="@string/placeholder_text_season_rate"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_season_rate"
-        android:textStyle="bold"
         tools:text="8.0" />
 
     <LinearLayout
@@ -52,21 +44,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/season_poster"
         android:layout_margin="@dimen/space_left_right"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/episodes"
+            android:layout_marginRight="@dimen/space_left_right"
+            android:text="@string/episodes_list"
             android:textColor="@color/text_episodes_header"
             android:textSize="@dimen/text_episodes_header"
-            android:layout_marginRight="@dimen/space_left_right"/>
+            tools:ignore="RtlHardcoded" />
 
         <me.zhanghai.android.materialprogressbar.MaterialProgressBar
             android:id="@+id/progress_bar"
             style="@style/TraktTheme.ProgressBar"
-            app:mpb_progressStyle="circular"/>
+            app:mpb_progressStyle="circular" />
     </LinearLayout>
 
 </RelativeLayout>
