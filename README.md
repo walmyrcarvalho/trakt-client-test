@@ -1,12 +1,12 @@
 ## Recrutamento Android - Movile
 
-![Hero image](art/hero.jpg)
+Projeto teste para processo seletivo da Movile.
 
----
+![Hero image](art/hero.jpg)
 
 ## Sobre
 
-Projeto teste para processo seletivo da vaga de desenvolvedor Android da Movile. O aplicativo consiste em um cliente simples do [Trakt.tv](http://trakt.tv) que trás informações de uma série, como a lista de episódios de uma temporada e outros detalhes, como imagens e rating.
+O aplicativo consiste em um cliente simples do [Trakt.tv](http://trakt.tv) que trás informações de uma série, como a lista de episódios de uma temporada e outros detalhes, como imagens e rating.
 
 
 ## Características
