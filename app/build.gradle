@@ -76,7 +76,6 @@ dependencies {
     androidTestCompile "com.android.support.test:rules:$versions.supportTestRunner"
 
     androidTestCompile "com.android.support.test.espresso:espresso-core:$versions.espresso"
-    androidTestCompile "com.android.support.test.espresso:espresso-intents:$versions.espresso"
     androidTestCompile ("com.android.support.test.espresso:espresso-contrib:$versions.espresso") {
         exclude module: 'support-annotations'
         exclude module: 'recyclerview-v7'
