@@ -36,7 +36,7 @@ public class TraktAPI {
 
     public OkHttpClient getOkHttpClient() {
         return new OkHttpClient.Builder()
-                .addInterceptor(headerInterceptor) // Custom headers
+                .addInterceptor(headerInterceptor)
                 .build();
     }
 

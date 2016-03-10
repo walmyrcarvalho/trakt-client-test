@@ -16,5 +16,4 @@ public class Constants {
     public static final String VALUE_API_KEY       = BuildConfig.API_KEY;
     public static final String VALUE_API_VERSION   = "2";
     public static final String VALUE_CONTENT_TYPE  = "application/json";
-
 }
