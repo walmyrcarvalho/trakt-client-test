@@ -24,8 +24,8 @@ Trakt.tv (Docs): [http://docs.trakt.apiary.io/](http://docs.trakt.apiary.io/)
 * Cliente REST/HTTP com Retrofit + OkHttp
 * Carregamento de imagens com Picasso
 * View binding com Butterknife
-* Testes unitários com JUnit + Hamcrest + Mockito
-* Testes de UI/funcionais com Espresso
+* Testes unitários com JUnit + Mockito
+* Testes de UI com Espresso
 
 #### Requisitos
 
