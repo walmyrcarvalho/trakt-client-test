@@ -6,7 +6,12 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
 public class Rating {
+
     public BigDecimal rating;
+
+    public Rating(BigDecimal rating) {
+        this.rating = rating;
+    }
 
     public String getPrettyRating() {
         DecimalFormat ratingFormat = new DecimalFormat("#.#");
