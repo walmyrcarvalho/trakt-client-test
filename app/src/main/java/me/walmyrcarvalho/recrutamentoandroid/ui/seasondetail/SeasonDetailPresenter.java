@@ -1,5 +1,7 @@
 package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 
+import android.support.annotation.StringRes;
+
 import java.util.List;
 
 import me.walmyrcarvalho.recrutamentoandroid.data.api.TraktClient;
@@ -70,12 +72,12 @@ public class SeasonDetailPresenter implements
     @Override
     public void onShowDetailLoaded(Show show) {
         if (view != null) {
-            if (show.images.poster.full != null) {
-                view.showPosterImage(show.images.poster.full);
+            if (show.images.poster.url != null) {
+                view.showPosterImage(show.images.poster.url);
             }
 
-            if (show.images.banner.full != null) {
-                view.showHeaderImage(show.images.banner.full);
+            if (show.images.banner.url != null) {
+                view.showHeaderImage(show.images.banner.url);
             }
         }
     }
