@@ -4,13 +4,18 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 
+import me.walmyrcarvalho.recrutamentoandroid.BuildConfig;
 import me.walmyrcarvalho.recrutamentoandroid.misc.util.Constants;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static okhttp3.logging.HttpLoggingInterceptor.Level.BODY;
+import static okhttp3.logging.HttpLoggingInterceptor.Level.NONE;
 
 public class TraktAPI {
 
@@ -37,12 +42,16 @@ public class TraktAPI {
     public OkHttpClient getOkHttpClient() {
         return new OkHttpClient.Builder()
                 .addInterceptor(headerInterceptor)
+                .addInterceptor(httpLoggingInterceptor)
                 .build();
     }
 
     public TraktService getService() {
         return service;
     }
+
+    public static HttpLoggingInterceptor httpLoggingInterceptor =
+            new HttpLoggingInterceptor().setLevel(BuildConfig.DEBUG ? BODY : NONE);
 
     public static Interceptor headerInterceptor = new Interceptor() {
 
