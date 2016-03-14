@@ -54,8 +54,6 @@ dependencies {
     compile "com.android.support:support-v4:$versions.supportLib"
 
     // Networking
-    compile "com.squareup.picasso:picasso:$versions.picasso"
-    compile "com.jakewharton:butterknife:$versions.butterknife"
     compile "com.squareup.okhttp3:okhttp:$versions.okHttp"
     compile "com.squareup.okhttp3:logging-interceptor:$versions.okHttpInterceptor"
     compile "com.squareup.retrofit2:retrofit:$versions.retrofit"
@@ -63,10 +61,12 @@ dependencies {
     compile "com.google.code.gson:gson:$versions.gson"
 
     // Misc
-    compile "me.zhanghai.android.materialprogressbar:library:$versions.materialprogress"
+    compile "com.squareup.picasso:picasso:$versions.picasso"
+    compile "com.jakewharton:butterknife:$versions.butterKnife"
+    compile "me.zhanghai.android.materialprogressbar:library:$versions.materialProgress"
 
     // Unit Testing
-    testCompile "junit:junit:$versions.junit"
+    testCompile "junit:junit:$versions.jUnit"
     testCompile "org.mockito:mockito-all:$versions.mockito"
 
     // UI Testing
