@@ -3,7 +3,6 @@ package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 import java.util.List;
 
 import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
-import me.walmyrcarvalho.recrutamentoandroid.data.entity.Rating;
 
 public interface SeasonDetailContract {
 

@@ -31,7 +31,6 @@ import me.walmyrcarvalho.recrutamentoandroid.data.entity.Episode;
 import me.walmyrcarvalho.recrutamentoandroid.misc.util.Constants;
 import me.walmyrcarvalho.recrutamentoandroid.misc.util.NetworkUtil;
 import me.walmyrcarvalho.recrutamentoandroid.misc.widgets.DividerItemDecoration;
-import me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail.SeasonDetailContract.Presenter;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 public class SeasonDetailFragment extends Fragment implements SeasonDetailContract.View {
@@ -55,7 +54,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
     TextView seasonRating;
 
     private View view;
-    private Presenter presenter;
+    private SeasonDetailPresenter presenter;
 
     public SeasonDetailFragment() { /**/ }
 
