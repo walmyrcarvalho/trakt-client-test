@@ -1,7 +1,5 @@
 package me.walmyrcarvalho.recrutamentoandroid.ui.seasondetail;
 
-import android.support.annotation.StringRes;
-
 import java.util.List;
 
 import me.walmyrcarvalho.recrutamentoandroid.data.api.TraktClient;
