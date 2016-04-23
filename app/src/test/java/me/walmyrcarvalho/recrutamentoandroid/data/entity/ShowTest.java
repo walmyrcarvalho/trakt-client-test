@@ -12,8 +12,7 @@ public class ShowTest {
 
     public static final String EXPECTED_POSTER_URL = "https://walter.trakt.us/images/shows/000/093/720/posters/original/e90844dd99.jpg";
     public static final String EXPECTED_BANNER_URL = "https://walter.trakt.us/images/shows/000/093/720/banners/original/1df32e4211.jpg";
-
-    private static final String EXPECTED_TITLE = "Mr. Robot";
+    public static final String EXPECTED_TITLE = "Mr. Robot";
 
     private Show show;
     private Image poster, banner;
@@ -26,11 +25,9 @@ public class ShowTest {
         poster = new Image("https://walter.trakt.us/images/shows/000/093/720/posters/original/e90844dd99.jpg");
         banner = new Image("https://walter.trakt.us/images/shows/000/093/720/banners/original/1df32e4211.jpg");
 
-        title = "Mr. Robot";
-
+        title  = "Mr. Robot";
         images = new Images(poster, banner);
-
-        show = new Show(title, images);
+        show   = new Show(title, images);
     }
 
     @Test

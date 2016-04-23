@@ -16,7 +16,8 @@ import retrofit2.Response;
 
 public class TraktClient {
 
-    public void loadShowSeason(String showName, int season, @NonNull final ShowSeasonCallback callback) {
+    public void loadShowSeason(String showName, int season,
+                               @NonNull final ShowSeasonCallback callback) {
 
         TraktAPI.getInstance()
                 .getShowSeason(showName, season)
@@ -60,7 +61,6 @@ public class TraktClient {
                         callback.onShowDetailNotLoaded("Unable to find the show.");
                     }
                 });
-
     }
 
     public void loadShowRating(String showName, @NonNull final ShowRatingCallback callback) {
