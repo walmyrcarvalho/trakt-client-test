@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:contentDescription="@string/content_description_episode_item"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:background="?android:selectableItemBackground"
     android:padding="@dimen/space_left_right">
 
     <TextView
         android:id="@+id/episode_number"
         style="@style/TraktTheme.EpisodeNumber"
         tools:ignore="RtlHardcoded"
-        tools:text="E1"/>
+        tools:text="E1" />
 
     <TextView
         android:id="@+id/episode_title"

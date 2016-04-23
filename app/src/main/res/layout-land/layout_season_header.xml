@@ -12,10 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/layout_season_description"
+        android:layout_alignTop="@+id/layout_season_description"
         android:layout_toEndOf="@+id/layout_season_description"
         android:layout_toRightOf="@+id/layout_season_description"
         android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/content_description_image"
+        android:contentDescription="@string/content_description_poster_image"
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop" />
 
@@ -34,7 +35,7 @@
             android:layout_width="@dimen/image_poster_width"
             android:layout_height="@dimen/image_poster_height"
             android:layout_marginRight="@dimen/space_left_right"
-            android:contentDescription="@string/content_description_image"
+            android:contentDescription="@string/content_description_header_image"
             android:src="@drawable/poster_placeholder"
             tools:ignore="RtlHardcoded" />
 
@@ -43,6 +44,7 @@
             style="@style/TraktTheme.SeasonRating"
             android:layout_toEndOf="@+id/season_poster"
             android:layout_toRightOf="@+id/season_poster"
+            android:contentDescription="@string/content_description_rating"
             tools:text="8.0" />
 
         <LinearLayout
@@ -59,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/episodes_list"
+                android:contentDescription="@string/content_description_episodes_title"
                 android:textColor="@color/text_episodes_header"
                 android:textSize="@dimen/text_episodes_header" />
 

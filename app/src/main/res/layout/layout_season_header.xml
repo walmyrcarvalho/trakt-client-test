@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_header_height"
         android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/content_description_image"
+        android:contentDescription="@string/content_description_header_image"
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop" />
 
@@ -24,7 +24,7 @@
         android:layout_gravity="start"
         android:layout_marginLeft="@dimen/space_left_right"
         android:layout_marginRight="@dimen/space_left_right"
-        android:contentDescription="@string/content_description_image"
+        android:contentDescription="@string/content_description_poster_image"
         android:src="@drawable/poster_placeholder"
         tools:ignore="RtlHardcoded" />
 
@@ -52,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/space_left_right"
+            android:contentDescription="@string/content_description_episodes_title"
             android:text="@string/episodes_list"
             android:textColor="@color/text_episodes_header"
             android:textSize="@dimen/text_episodes_header"

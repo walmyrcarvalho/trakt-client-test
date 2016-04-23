@@ -6,13 +6,13 @@
     <string name="placeholder_text_season_rating">--</string>
 
     <!-- Content descriptions -->
-    <string name="content_description_image">Image</string>
     <string name="content_description_poster_image">Poster image</string>
     <string name="content_description_header_image">Header image</string>
 
-    <string name="content_description_text">text</string>
-    <string name="content_description_episodes">Episodes</string>
-    <string name="content_description_rating">Rate</string>
+    <string name="content_description_episodes_title">Episodes</string>
+    <string name="content_description_episodes_list">Episodes List</string>
+    <string name="content_description_episode_item">Episode</string>
+    <string name="content_description_rating">Rating</string>
 
     <!-- General -->
     <string name="episodes_list">Episodes</string>
