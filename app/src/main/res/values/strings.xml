@@ -19,7 +19,7 @@
     <string name="network_error">You may be offline. Please, check your connection and try again.</string>
 
     <string name="app_dialog_title">About this project</string>
-    <string name="app_dialog_description">This is a test application made by Walmyr Carvalho for Movile selection process. Please do not try to monetize or publish it on Play Store.\n\nThanks!</string>
+    <string name="app_dialog_description">This is a test application made by Walmyr Carvalho for a company selection process. Please do not try to monetize or publish it on Play Store.\n\nThanks!</string>
 
     <string name="refresh">Refresh</string>
     <string name="about">About</string>
