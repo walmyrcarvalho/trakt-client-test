@@ -18,7 +18,7 @@ public class SeasonDetailPresenter implements
     private SeasonDetailContract.View view;
     private TraktClient client;
 
-    public SeasonDetailPresenter(TraktClient client, SeasonDetailContract.View view) {
+    public SeasonDetailPresenter(SeasonDetailContract.View view, TraktClient client) {
         this.view = checkNotNull(view, "SeasonDetailContract.View cannot be null.");
         this.client = checkNotNull(client, "TraktClient cannot be null.");
     }
