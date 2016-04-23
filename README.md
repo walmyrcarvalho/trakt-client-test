@@ -8,7 +8,7 @@ Projeto teste para processo seletivo.
 
 O aplicativo consiste em um cliente simples do [Trakt.tv](http://trakt.tv) que trás informações de uma série, como a lista de episódios de uma temporada e outros detalhes, como imagens e rating.
 
-Demonstração (Vídeo): [Link](https://www.youtube.com/watch?v=eCCA1L3BlWo)
+Demonstração (Vídeo): [Link](https://youtu.be/tpjaObA2xNA)
 
 ## Detalhes do projeto
 
