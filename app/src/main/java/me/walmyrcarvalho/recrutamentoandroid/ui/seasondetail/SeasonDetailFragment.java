@@ -127,7 +127,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
     }
 
     private void setupPresenter() {
-        presenter = new SeasonDetailPresenter(new TraktClient(), this);
+        presenter = new SeasonDetailPresenter(this, new TraktClient());
     }
 
     private void setupRecyclerView(Context context, RecyclerView list) {
@@ -159,9 +159,7 @@ public class SeasonDetailFragment extends Fragment implements SeasonDetailContra
 
     @Override
     public void showHeaderImage(String headerUrl) {
-        Picasso.with(getActivity())
-                .load(headerUrl)
-                .into(headerImage);
+        Picasso.with(getActivity()).load(headerUrl).into(headerImage);
     }
 
     @Override
