@@ -1,6 +1,6 @@
-## Recrutamento Android - Movile
+## Recrutamento Android - Trakt Client
 
-Projeto teste para processo seletivo da Movile.
+Projeto teste para processo seletivo.
 
 ![Hero image](art/hero.jpg)
 
