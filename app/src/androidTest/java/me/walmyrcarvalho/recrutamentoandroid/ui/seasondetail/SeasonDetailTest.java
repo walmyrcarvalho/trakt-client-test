@@ -28,7 +28,7 @@ public class SeasonDetailTest {
             new ActivityTestRule<>(SeasonDetailActivity.class);
 
     @Test
-    public void testHeaderContentVisible() {
+    public void checkIfHeaderContentIsVisible() {
         onView(withId(R.id.season_poster)).check(matches(isDisplayed()));
         onView(withId(R.id.season_header)).check(matches(isDisplayed()));
         onView(withId(R.id.season_rating)).check(matches(isDisplayed()));
@@ -36,12 +36,12 @@ public class SeasonDetailTest {
     }
 
     @Test
-    public void testOpenOverflowMenuAndClose() {
+    public void openOverflowMenuThenClose() {
         openContextualActionModeOverflowMenu();
     }
 
     @Test
-    public void testOpenOverflowMenuThenChooseRefreshOption() {
+    public void openOverflowMenuThenChooseRefreshOption() {
         openContextualActionModeOverflowMenu();
         onView(withText(R.string.refresh)).perform(click());
     }
