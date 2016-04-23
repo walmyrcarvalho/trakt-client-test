@@ -1,6 +1,35 @@
 apply plugin: 'com.android.application'
 
-apply from: 'versions.gradle'
+def versions = [
+
+    //  SDK and Tools
+    compileSdk       : 23,
+    buildTools       : '23.0.2',
+
+    minSdk           : 16,
+    targetSdk        : 23,
+
+    code             : 1,
+    name             : '1.0.0',
+
+    //  Libraries
+    supportLib       : '23.3.0',
+
+    okHttp           : '3.2.0',
+    retrofit         : '2.0.1',
+    okHttpInterceptor: '3.0.1',
+    gson             : '2.5',
+
+    picasso          : '2.5.2',
+    butterKnife      : '7.0.1',
+    materialProgress : '1.1.5',
+
+    jUnit            : '4.12',
+    mockito          : '2.0.2-beta',
+
+    supportTestRunner: '0.4.1',
+    espresso         : '2.2.1',
+]
 
 repositories {
     mavenCentral()
@@ -24,7 +53,7 @@ android {
 
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
 
-        buildConfigField "String", "API_KEY", "\""+getAPIKey()+"\""
+        buildConfigField "String", "API_KEY", "\"" + getAPIKey() + "\""
     }
 
     buildTypes {
@@ -51,7 +80,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$versions.supportLib"
     compile "com.android.support:design:$versions.supportLib"
     compile "com.android.support:recyclerview-v7:$versions.supportLib"
-    compile "com.android.support:support-v4:$versions.supportLib"
 
     // Networking
     compile "com.squareup.okhttp3:okhttp:$versions.okHttp"
@@ -76,10 +104,9 @@ dependencies {
     androidTestCompile "com.android.support.test:rules:$versions.supportTestRunner"
 
     androidTestCompile "com.android.support.test.espresso:espresso-core:$versions.espresso"
-    androidTestCompile ("com.android.support.test.espresso:espresso-contrib:$versions.espresso") {
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:$versions.espresso") {
         exclude module: 'support-annotations'
         exclude module: 'recyclerview-v7'
         exclude module: 'support-v4'
     }
-
 }
